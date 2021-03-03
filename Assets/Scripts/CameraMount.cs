@@ -9,7 +9,7 @@ public class CameraMount : NetworkBehaviour
 
     void Start()
     {
-        if (isLocalPlayer)
+        if (hasAuthority)
         {
             Transform cameraTransform = Camera.main.gameObject.transform;
             cameraTransform.SetParent(CameraMountPoint.transform);

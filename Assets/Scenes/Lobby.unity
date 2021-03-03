@@ -276,9 +276,13 @@ MonoBehaviour:
   autoCreatePlayer: 1
   playerSpawnMethod: 0
   spawnPrefabs: []
-  minPlayers: 2
+  minPlayers: 1
   menuScene: Assets/Scenes/Lobby.unity
   roomPlayerPrefab: {fileID: 7913829826023308516, guid: 74dc6a69a0646184cb4f597e4b048ee4,
+    type: 3}
+  gamePlayerPrefab: {fileID: 2450064395032379752, guid: 5f3ef3f894ef1c1428206248d8cf4860,
+    type: 3}
+  playerSpawnSystem: {fileID: 4560945391484126039, guid: a2d4447a24a354b4daa105cec6d899b5,
     type: 3}
 --- !u!4 &532684301
 Transform:
@@ -529,5 +533,10 @@ PrefabInstance:
       propertyPath: networkManager
       value: 
       objectReference: {fileID: 532684300}
+    - target: {fileID: 9200131766174477123, guid: 9b0fea05a2a092b44b79c5510ef1bb7c,
+        type: 3}
+      propertyPath: m_text
+      value: Escape the Maze
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b0fea05a2a092b44b79c5510ef1bb7c, type: 3}

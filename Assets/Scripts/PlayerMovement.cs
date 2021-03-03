@@ -25,7 +25,7 @@ public class PlayerMovement : NetworkBehaviour
     }
      void HandleMovement()
     {
-        if (isLocalPlayer)
+        if (hasAuthority)
         {
             isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
