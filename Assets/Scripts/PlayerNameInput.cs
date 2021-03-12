@@ -38,6 +38,11 @@ public class PlayerNameInput : MonoBehaviour
 
         PlayerPrefs.SetString(PlayerPrefsNameKey, DisplayName);
     }
+    
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
     // Update is called once per frame
     void Update()
     {

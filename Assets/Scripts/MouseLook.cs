@@ -13,7 +13,7 @@ public class MouseLook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -30,13 +30,11 @@ public class MouseLook : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Y))
         {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-        else
-        {
-            Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+        }
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 }

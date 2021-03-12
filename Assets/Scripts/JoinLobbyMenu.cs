@@ -13,6 +13,7 @@ public class JoinLobbyMenu : MonoBehaviour
     [SerializeField] private GameObject landingPagePanel = null;
     [SerializeField] private TMP_InputField ipAddressInputField = null;
     [SerializeField] private Button joinButton = null;
+    [SerializeField] private Button backButton = null;
 
     private void OnEnable()
     {
@@ -34,11 +35,14 @@ public class JoinLobbyMenu : MonoBehaviour
         networkManager.StartClient();
 
         joinButton.interactable = false;
+        backButton.interactable = false;
+        
     }
 
     private void HandleClientConnected()
     {
         joinButton.interactable = true;
+        backButton.interactable = true;
 
         gameObject.SetActive(false);
         landingPagePanel.SetActive(false);
@@ -47,6 +51,7 @@ public class JoinLobbyMenu : MonoBehaviour
     private void HandleClientDisconnected()
     {
         joinButton.interactable = true;
+        backButton.interactable = true;
     }
 
     // Start is called before the first frame update
