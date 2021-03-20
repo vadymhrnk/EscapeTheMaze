@@ -38,9 +38,9 @@ public class ChatBehaviour : NetworkBehaviour
     {
         if (!Input.GetKeyDown(KeyCode.Return)) { return; }
 
-        if (string.IsNullOrWhiteSpace(message)) { return; }
+        if (string.IsNullOrWhiteSpace(inputField.text)) { return; }
 
-        CmdSendMessage(message);
+        CmdSendMessage(inputField.text);
 
         inputField.text = string.Empty;
     }

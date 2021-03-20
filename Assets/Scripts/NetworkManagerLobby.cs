@@ -140,7 +140,7 @@ public class NetworkManagerLobby : NetworkManager
 
                 NetworkServer.Destroy(conn.identity.gameObject);
 
-                NetworkServer.ReplacePlayerForConnection(conn, gameplayerInstance.gameObject);
+                NetworkServer.ReplacePlayerForConnection(conn, gameplayerInstance.gameObject, true);
             }
         }
 

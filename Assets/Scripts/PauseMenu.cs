@@ -9,8 +9,11 @@ public class PauseMenu : MonoBehaviour
 
     public static bool IsPaused = false;
 
+
     public void Resume()
     {
+        GameObject mouseLookScript = GameObject.Find("CameraMountPoint");
+        mouseLookScript.GetComponent<MouseLook>().enabled = true;
         pauseMenuUI.SetActive(false);
         IsPaused = false;
         Cursor.visible = false;
@@ -20,6 +23,8 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
+        GameObject mouseLookScript = GameObject.Find("CameraMountPoint");
+        mouseLookScript.GetComponent<MouseLook>().enabled = false;
         pauseMenuUI.SetActive(true);
         IsPaused = true;
         Cursor.visible = true;
@@ -44,6 +49,7 @@ public class PauseMenu : MonoBehaviour
             if (IsPaused)
             {
                 Resume();
+
             }
             else
             {

@@ -8,13 +8,26 @@ public class EndGame : NetworkBehaviour
     [SerializeField] private GameObject WinnerUI = null;
 
     private string[] password;
-    private int index;
+    private int index = 0;
 
+    [Server]
+    private void PasswordEnter(int index)
+    {
+        password = new string[] { "i", "s", "o", "l", "a", "t", "e", "d" };
+        index = this.index;
+    }
+
+    [ClientRpc]
+    private void Winner()
+    {
+        WinnerUI.SetActive(true);
+    }
+
+    public override void OnStartServer() => PasswordEnter(index);
 
     void Start()
     {
-        password = new string[] { "i", "s", "o", "l", "a","t","e","d" };
-        index = 0;
+
     }
 
     void Update()
@@ -33,7 +46,7 @@ public class EndGame : NetworkBehaviour
 
         if (index == password.Length)
         {
-            WinnerUI.SetActive(true);
+            Winner();
         }
     }
 }
